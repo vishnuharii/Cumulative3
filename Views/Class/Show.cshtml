@@ -1,0 +1,44 @@
+﻿﻿﻿@model HTTP5125_Cumulative_Project_Part_3.Models.Class
+
+@{
+    ViewBag.Title = "Show";
+}
+
+<h2>Details of Class</h2>
+
+<table border="1">
+    <tr>
+        <th>Class Code</th>
+        <td>@Model.ClassCode</td>
+    </tr>
+    <tr>
+        <th>Class Name</th>
+        <td>@Model.ClassName</td>
+    </tr>
+    <tr>
+        <th>Start Date</th>
+        <td>@Model.StartDate</td>
+    </tr>
+    <tr>
+        <th>Finish Date</th>
+        <td>@Model.FinishDate</td>
+    </tr>
+    <tr>
+        <th>Teacher's link</th>
+        <td id="teacher"><a id="link" href="/Teacher/Show/@Model.TeacherId">@Model.TeacherFname @Model.TeacherLname</a></td>
+    </tr>
+
+
+</table>
+
+
+<script>
+    //if there is no teacher link to this course, showing TBD instead of teacher's name and link
+    var t = document.getElementById("teacher");
+    var link = document.getElementById("link");
+
+    if (link.innerHTML == " ") {
+        t.innerHTML = "TBD";
+    }
+
+</script>

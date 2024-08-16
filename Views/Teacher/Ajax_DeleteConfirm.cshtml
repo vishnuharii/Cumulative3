@@ -1,0 +1,15 @@
+﻿﻿﻿@model HTTP5125_Cumulative_Project_Part_3.Models.Teacher
+
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<a href="/Teacher/Show/@Model.TeacherId">Cancel</a>
+
+<h2>Are you sure you want to delete @Model.TeacherFname @Model.TeacherLname ?</h2>
+<p>This action cannot be undone.</p>
+
+<form methor="POST" action="/Teacher/Delete/@Model.TeacherId">
+    <button>Confirm Delete</button>
+</form>

@@ -1,0 +1,25 @@
+﻿﻿﻿@model IEnumerable<HTTP5125_Cumulative_Project_Part_3.Models.Teacher>
+
+@{
+    ViewBag.Title = "List of Teachers";
+}
+
+
+<a href="/Teacher/New">New Teacher</a>
+<a href="/Teacher/AJAX_New">New Teacher using AJAX</a>
+
+<h2>List of Teachers</h2>
+<p>Click the link for the detail of a teacher</p>
+<form action="List" method="GET">
+    <input type="text" name="searchKey" />
+    <input type="submit" value="Search" />
+
+</form>
+
+@foreach (var teacher in Model)
+{
+    <div>
+        <a href="/Teacher/Show/@teacher.TeacherId">  @teacher.TeacherFname @teacher.TeacherLname</a>
+    </div>
+
+}

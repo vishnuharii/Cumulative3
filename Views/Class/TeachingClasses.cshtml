@@ -1,0 +1,15 @@
+﻿﻿﻿@model IEnumerable<HTTP5125_Cumulative_Project_Part_3.Models.Class>
+
+@{
+    ViewBag.Title = "TeachingClasses";
+}
+
+<h2>Teaching Classes</h2>
+
+@foreach (var teachingclass in Model)
+{
+
+    <div>
+        <a href="/Class/Show/@teachingclass.ClassId">@teachingclass.ClassCode</a>
+    </div>
+}

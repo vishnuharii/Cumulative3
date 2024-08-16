@@ -1,0 +1,17 @@
+﻿﻿﻿@model IEnumerable<HTTP5125_Cumulative_Project_Part_3.Models.Class>
+@{
+    ViewBag.Title = "List";
+}
+
+<h2>List of Classes</h2>
+<p>Please click the link to check the detail of class</p>
+<form action="List" method="GET">
+    <input type="text" name="searchKey" />
+    <input type="submit" name="search" />
+</form>
+@foreach (var classes in Model)
+{
+    <div>
+        <a href="/Class/Show/@classes.ClassId">@classes.ClassCode</a>
+    </div>
+}

@@ -1,0 +1,44 @@
+﻿﻿﻿@model HTTP5125_Cumulative_Project_Part_3.Models.Teacher
+
+
+@{
+    ViewBag.Title = "Show";
+}
+
+<a href="/Teacher/List">Back to list of Teachers</a>
+<a href="/Teacher/AJAX_Update/@Model.TeacherId">Update Teacher using AJAX</a>
+<a style="float:right; color:red;" href="/Teacher/DeleteConfirm/@Model.TeacherId">Delete</a>
+
+<h2>Details of Teacher</h2>
+
+<table border="1">
+    <thead>
+        <tr>
+            <th>Teacher's First Name</th>
+            <td> @Model.TeacherFname</td>
+        </tr>
+        <tr>
+            <th>Teacher's Last Name</th>
+            <td> @Model.TeacherLname</td>
+        </tr>
+        <tr>
+            <th>Employee Number</th>
+            <td>@Model.EmployeeNumber</td>
+        </tr>
+        <tr>
+            <th>Salary</th>
+            <td>@Model.Salary</td>
+        </tr>
+        <tr>
+            <th>Hire Date</th>
+            <td>@Model.HireDate</td>
+        </tr>
+        <tr>
+            <th>Teaching Class</th>
+            <td><a href="/Class/TeachingClasses/@Model.TeacherId">List of classes</a></td>
+        </tr>
+
+
+    </thead>
+
+</table>

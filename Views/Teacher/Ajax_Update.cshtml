@@ -1,0 +1,91 @@
+﻿﻿﻿@model HTTP5125_Cumulative_Project_Part_3.Models.Teacher
+
+@{
+    ViewBag.Title = "Ajax_Update";
+}
+
+
+<div>
+    <nav>
+        <a href="/Teacher/Show/@Model.TeacherId">Back</a>
+    </nav>
+</div>
+<h2>Update Teacher @Model.TeacherFname @Model.TeacherLname</h2>
+<form method="POST" action="/Teacher/Updated/@Model.TeacherId" name="form1" onsubmit="return validation();">
+    <div id="errormessage" style="color:red;"></div>
+    <div>
+        <label for="TeacherFname">Teacher's First Name: </label>
+        <input type="text" id="TeacherFname" name="TeacherFname" value="@Model.TeacherFname" />
+    </div>
+    <div>
+        <label for="TeacherLname">Teacher's Last Name: </label>
+        <input type="text" id="TeacherLname" name="TeacherLname" value="@Model.TeacherLname" />
+    </div>
+    <div>
+        <label for="EmployeeNumber">Employee Number: </label>
+        <input type="text" id="EmployeeNumber" name="EmployeeNumber" value="@Model.EmployeeNumber" />
+    </div>
+    <div>
+        <label for="Salary">Salary: </label>
+        <input type="text" id="Salary" name="Salary" value="@Model.Salary" />
+    </div>
+    <div>
+        <button type="submit">Update</button>
+    </div>
+</form>
+
+
+
+
+<script>
+
+    function validation() {
+        var errormessage = document.getElementById("errormessage");
+        var teacherfname = document.getElementById("TeacherFname");
+        var teacherlname = document.getElementById("TeacherLname");
+        var employeenumber = document.getElementById("EmployeeNumber");
+        var salary = document.getElementById("Salary");
+
+        if (teacherfname.value === "") {
+            teacherfname.focus();
+            teacherfname.style.backgroundColor = "red";
+            errormessage.innerHTML = "Fill the required fills";
+            return false;
+        } else {
+            teacherfname.style.backgroundColor = "white";
+        };
+
+        if (teacherlname.value === "") {
+            teacherlname.focus();
+            teacherlname.style.backgroundColor = "red";
+            errormessage.innerHTML = "Fill the required fills";
+            return false;
+        } else {
+            teacherlname.style.backgroundColor = "white";
+        };
+
+        if (employeenumber.value === "") {
+            employeenumber.focus();
+            employeenumber.style.backgroundColor = "red";
+            errormessage.innerHTML = "Fill the required fills";
+            return false;
+        } else {
+            employeenumber.style.backgroundColor = "white";
+        };
+
+        if (salary.value === "") {
+            salary.focus();
+            salary.style.backgroundColor = "red";
+            errormessage.innerHTML = "Fill the required fills";
+            return false;
+        } else {
+            salary.style.backgroundColor = "white";
+        };
+
+    }
+
+
+
+
+
+</script>
